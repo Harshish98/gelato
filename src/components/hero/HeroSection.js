@@ -4,9 +4,9 @@ import { HeroBanner } from './HeroBanner';
 export const HeroSection = () => {
   return (
     <>
-      <div className="sm:bg-[#faf6ef] lg:bg-white py-4">
-        <div className="flex justify-center items-center max-w-screen-xl mx-auto">
-          <div className="flex justify-center order-2 basis-1/2">
+      <div className="bg-[#faf6ef] md:bg-white py-4">
+        <div className="flex flex-col md:flex-row justify-center items-center max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-screen-xl mx-auto gap-6">
+          <div className="flex justify-center md:order-2 basis-1/2">
             <img
               className="block"
               src="https://a.storyblok.com/f/165154/1105x958/e9c9ddb8d6/01_hp_top-banner_white-version-1.png/m/1000x0/"
@@ -17,11 +17,11 @@ export const HeroSection = () => {
               width={327}
             />
           </div>
-          <div className="order-1 basis-1/2 space-y-8">
+          <div className="order-1 basis-1/2 space-y-3 md:space-y-4 lg:space-y-8">
             <h2 className="text-3xl font-medium lg:text-6xl">
               Print on demand for your ecommerce business
             </h2>
-            <div className='space-y-1'>
+            <div className="space-y-1">
               <p className="text-2xl">
                 Sign up for free and only pay for what you sell
               </p>
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-      <HeroBanner/>
+      <HeroBanner />
     </>
   );
 }

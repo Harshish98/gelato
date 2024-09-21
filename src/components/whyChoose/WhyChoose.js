@@ -34,19 +34,21 @@ export const WhyChoose = () => {
   ];
   return (
     <>
-      <div className="py-10 max-w-screen-xl mx-auto">
-        <h1 className="text-3xl lg:text-6xl text-center font-medium mb-8">
+      <div className="py-10 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-screen-xl mx-auto">
+        <h1 className="text-3xl lg:text-6xl text-center font-medium mb-4 md:mb-8">
           Why choose Gelato
         </h1>
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="">
             <img src="https://a.storyblok.com/f/165154/1450x1450/97cf3c3c7e/0341_2024-brand-vi-rollout-dedicated-hero-1450x1450-1.png/m/800x0/" />
           </div>
-          <div className=" space-y-4">
+          <div className="space-y-2 lg:space-y-4">
             {list.map((val, index) => {
               return (
                 <div className="space-y-2" key={index}>
-                  <h4 className="text-2xl font-medium">▻ {val.heading}</h4>
+                  <h4 className="text-xl lg:text-2xl font-medium">
+                    ▻ {val.heading}
+                  </h4>
                   <p className="font-light">{val.subheading}</p>
                 </div>
               );

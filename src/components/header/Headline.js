@@ -13,7 +13,7 @@ export const Headline = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-5 text-white"
+          className="size-5 text-white hidden md:block"
         >
           <path
             strokeLinecap="round"

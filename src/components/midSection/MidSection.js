@@ -34,21 +34,23 @@ export const MidSection = () => {
             }  py-4`}
             key={index}
           >
-            <div className="max-w-screen-xl mx-auto flex justify-center items-center gap-8">
+            <div className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
               <img
                 className={`${
-                  val.heading === "GelatoConnect" ? "order-1" : "order-2"
-                } w-[644px]`}
+                  val.heading === "GelatoConnect" ? "order-1" : "md:order-2"
+                } w-[464px] xl:w-[644px]`}
                 src={val.image}
               />
               <div
                 className={`${
                   val.heading === "GelatoConnect" ? "order-2" : "order-1"
-                } space-y-8`}
+                } space-y-3 md:space-y-6 lg:space-y-8`}
               >
-                <div className="space-y-4">
-                  <p className="lg:text-lg">{val.title}</p>
-                  <h3 className="lg:text-6xl font-semibold">{val.heading}</h3>
+                <div className="space-y-2 lg:space-y-4">
+                  <p className="text-lg">{val.title}</p>
+                  <h3 className="text-4xl lg:text-6xl font-semibold">
+                    {val.heading}
+                  </h3>
                 </div>
                 <p className="lg:text-2xl font-medium">{val.subheading}</p>
                 <button className="bg-black text-white text-sm font-medium h-9 px-4 rounded-full">

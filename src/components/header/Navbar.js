@@ -1,26 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavbarContent } from './NavbarContent';
+import { SlideContent } from './SlideContent';
 
 const Navbar = () => {
+  const [toggleBox, setToggleBox] = useState(false)
+
   return (
     <>
       <div className="sticky top-0">
         <div className="border border-b-[#e6e6e6] py-3 font-medium bg-white">
-          <div className="max-w-4xl xl:max-w-screen-xl mx-auto flex justify-between items-center">
-            <div className='flex items-center gap-4'>
+          <div className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-screen-xl mx-auto flex justify-between items-center">
+            <div className="flex items-center gap-4">
               <div className="block xl:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <button onClick={() => setToggleBox(!toggleBox)}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
               </div>
               <div>
                 <img
@@ -30,14 +35,14 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer">
+              <div className="md:flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer hidden">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjEiLz48cGF0aCBkPSJNMTIgMWMtNC45NyAwLTkgNC4wMy05IDl2N2MwIDEuNjYgMS4zNCAzIDMgM2gzdi04SDV2LTJjMC0zLjg3IDMuMTMtNyA3LTdzNyAzLjEzIDcgN3YyaC00djhoNHYxaC03djJoNmMxLjY2IDAgMy0xLjM0IDMtM1YxMGMwLTQuOTctNC4wMy05LTktOXoiLz48L3N2Zz4="
                   width={24}
                 />
                 <p>Contact us</p>
               </div>
-              <div className="flex items-center justify-center gap-1 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer">
+              <div className="md:flex items-center justify-center gap-1 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -56,7 +61,7 @@ const Navbar = () => {
                   <option>IN/INR</option>
                 </select>
               </div>
-              <div className="flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer">
+              <div className="md:flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -67,7 +72,7 @@ const Navbar = () => {
                 </svg>
                 <p>Cart</p>
               </div>
-              <div className="flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer">
+              <div className="lg:flex items-center justify-center gap-2 px-4 rounded-full hover:bg-gray-300 h-9 cursor-pointer hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -90,6 +95,7 @@ const Navbar = () => {
         </div>
         <NavbarContent />
       </div>
+      <SlideContent toggleBox={toggleBox} setToggleBox={setToggleBox} />
     </>
   );
 }
